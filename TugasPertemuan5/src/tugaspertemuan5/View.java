@@ -125,22 +125,6 @@ public class View extends JFrame implements ActionListener{
                lvvolume.setText(":");
 	}
    }
-    
-   public void actionButton(ActionEvent e){
-       
-       if (fpanjang.getText().isEmpty()||flebar.getText().isEmpty()|| ftinggi.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Form masih ada yang kosong");
-        }
-        else
-        {
-            
-       panjang = Double.parseDouble(fpanjang.getText());
-       lebar = Double.parseDouble(flebar.getText());
-       tinggi = Double.parseDouble(ftinggi.getText());
-       
-            
-        }
-   }
 
 }
 
