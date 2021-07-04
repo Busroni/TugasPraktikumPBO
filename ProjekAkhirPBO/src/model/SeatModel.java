@@ -42,32 +42,5 @@ public class SeatModel {
             System.out.println("SQL Error");
             return null;
         }
-    }
-    
-    public void updateSeat(String Nama, String NoHp, String Umur, String Email){
-        int jmlData=0;
-         try {
-           String query = "Select * from contact WHERE NoHp=" + NoHp; 
-           ResultSet resultSet = DB.statement.executeQuery(query);
-           
-           while (resultSet.next()){ 
-                jmlData++;
-            }
-           
-             if (jmlData==1) {
-                query = "UPDATE contact SET Nama='" + Nama + "', Umur='" + Umur + "', Email='" + Email + "' WHERE NoHp=" + NoHp;
-                DB.statement = (Statement) DB.koneksi.createStatement();
-                DB.statement.executeUpdate(query); //execute querynya
-                System.out.println("Berhasil diupdate");
-                JOptionPane.showMessageDialog(null, "Data Berhasil diupdate");
-             }
-             else {
-                 JOptionPane.showMessageDialog(null, "Data Tidak Ada");
-             }
-           
-        } catch (Exception sql) {
-            System.out.println(sql.getMessage());   
-            JOptionPane.showMessageDialog(null, sql.getMessage());
-        }
-    }
+    }        
 }

@@ -32,6 +32,7 @@ public class IndexView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnpesan = new javax.swing.JButton();
         btnlihat = new javax.swing.JButton();
+        btnadmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(480, 480));
@@ -42,6 +43,13 @@ public class IndexView extends javax.swing.JFrame {
         btnpesan.setText("Pesan");
 
         btnlihat.setText("Lihat");
+
+        btnadmin.setText("Admin");
+        btnadmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnadminActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,7 +67,10 @@ public class IndexView extends javax.swing.JFrame {
                         .addGap(217, 217, 217))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnpesan, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(170, 170, 170))))
+                        .addGap(170, 170, 170))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,7 +81,9 @@ public class IndexView extends javax.swing.JFrame {
                 .addComponent(btnpesan, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnlihat, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addGap(141, 141, 141)
+                .addComponent(btnadmin)
+                .addGap(19, 19, 19))
         );
 
         btnpesan.getAccessibleContext().setAccessibleParent(btnpesan);
@@ -80,6 +93,10 @@ public class IndexView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnadminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,6 +134,7 @@ public class IndexView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnadmin;
     public javax.swing.JButton btnlihat;
     public javax.swing.JButton btnpesan;
     private javax.swing.JLabel jLabel1;

@@ -9,7 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import model.RegisterModel;
 import model.SeatModel;
+import view.AlertView;
 import view.DetailView;
 import view.SeatView;
 
@@ -49,7 +51,23 @@ public class SeatController extends JFrame implements ActionListener{
                 System.out.println(studio);                
                String temp[]= seatModel.readSeat(studio, button.getText());
                if(temp[2]==null){
-                   System.out.println(studio);
+                   AlertView alert=new AlertView();
+                   alert.setVisible(true);
+                   alert.lalert.setText("Apakah anda akan memilih Bangku "+button.getText());
+                   alert.btnyes.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {                                              
+                            RegisterModel regModel = new RegisterModel();                            
+                            regModel.insertData(data[1], data[2], data[3], studio, button.getText());
+                        }
+                    });
+                   alert.btnno.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {                  
+                            alert.setVisible(false);
+                        }
+                    });
+                   
                }else{
                    DetailView detView=new DetailView();
                    detView.setVisible(true);
