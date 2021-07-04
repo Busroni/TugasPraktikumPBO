@@ -23,17 +23,17 @@ public class Main {
      */
     public static void main(String[] args) {  
         
-        SeatView setview=new SeatView();
-        setview.setVisible(true);
-        SeatModel setMod=new SeatModel();
-        String dat[]={"Labdsj0","08","3812931"};
-        SeatController st=new SeatController("Studio 1",dat,setview,setMod);
+//        SeatView setview=new SeatView();
+//        setview.setVisible(true);
+//        SeatModel setMod=new SeatModel();
+//        String dat[]={"Labdsj0","08","3812931"};
+//        SeatController st=new SeatController("Studio 1",dat,setview,setMod);
 //      
 //        String data[]=setMod.readSeat("ST2","A1");
 //        System.out.println(data[3]);
 //        StudioModel model=new StudioModel();
-//        IndexView view=new IndexView();          
-//        IndexController startView=new IndexController(view);
+        IndexView view=new IndexView();          
+        IndexController startView=new IndexController(view);
 
 
 //        String Studio[]={"Studio 1","Studio 2","Studio 3"};

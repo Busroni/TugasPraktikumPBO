@@ -8,6 +8,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import model.SeatModel;
 import view.DetailView;
 import view.SeatView;
@@ -16,31 +17,17 @@ import view.SeatView;
  *
  * @author Lenovo ideapad
  */
-public class SeatController {
+public class SeatController extends JFrame implements ActionListener{
     String studio;
     String data[]=new String [4];
     SeatView seatVw;
-    SeatModel seatModel;
-    String sVar[]={
-            "A1",
-            "A2",
-            "A3",
-            "A4",
-            "B1",
-            "B2",
-            "B3",
-            "B4",
-            "C1",
-            "C2",
-            "C3",
-            "C4"
-        };    
+    SeatModel seatModel;    
     public SeatController(String studio, String[] data,SeatView seatVw, SeatModel seatModel) {
         this.studio = studio;
         this.data = data;                      
         this.seatVw = seatVw;
         this.seatModel = seatModel;
-        JButton seatVar[]={
+        JButton[] seatVar={
             seatVw.A1,
             seatVw.A2,
             seatVw.A3,
@@ -55,14 +42,14 @@ public class SeatController {
             seatVw.C4           
         };
         
-        for(int x=0;x<12;x++){
-        seatVar[x].addActionListener(new ActionListener() {
+        for(JButton button:seatVar){
+        button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               int arr=0;  //Iki salah ki kudune ora ng njero              
-               String temp[]= seatModel.readSeat(studio, sVar[arr]);//variabel arr pie carane ben jalan sesuai increment ++
+                System.out.println(studio);                
+               String temp[]= seatModel.readSeat(studio, button.getText());
                if(temp[2]==null){
-                   System.out.println("next");
+                   System.out.println(studio);
                }else{
                    DetailView detView=new DetailView();
                    detView.setVisible(true);
@@ -75,10 +62,14 @@ public class SeatController {
                             detView.setVisible(false);
                         }
                     });
-               }
-               arr=arr++;//iki juga percumah sak jan e kudune di deleh njobo
-               
+               }                              
             }
         });
     }              
-    }}
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}

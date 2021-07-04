@@ -27,6 +27,7 @@ public class IndexController {
             @Override
             public void actionPerformed(ActionEvent e) {                  
                 StudioView studioView = new StudioView();                
+                studioView.setVisible(true);
                 StudioController studioController = new StudioController(studioView,null);                                
             }
         });
