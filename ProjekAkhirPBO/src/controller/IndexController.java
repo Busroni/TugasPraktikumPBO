@@ -7,8 +7,10 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.StudioModel;
+import model.DatabaseModel;
+import model.RegisterModel;
 import view.IndexView;
+import view.RegisterView;
 import view.StudioView;
 
 /**
@@ -20,15 +22,20 @@ public class IndexController {
 
     public IndexController(IndexView indexView) {
         this.indexView = indexView;
-        
-        indexView.jButton3.addActionListener(new ActionListener() {
+        indexView.setVisible(true);
+        indexView.btnlihat.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                StudioView studioView = new StudioView();
-                StudioModel studioModel = new StudioModel();
-                StudioController studioController = new StudioController();
-                
-                
+            public void actionPerformed(ActionEvent e) {                  
+                StudioView studioView = new StudioView();                
+                StudioController studioController = new StudioController(studioView,null);                                
+            }
+        });
+        indexView.btnpesan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                  
+                RegisterView registerView = new RegisterView();
+                RegisterModel registerModel = new RegisterModel();
+                RegisterController regController=new RegisterController(registerView,registerModel);
             }
         });
     }
