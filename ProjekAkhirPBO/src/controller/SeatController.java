@@ -13,6 +13,7 @@ import model.RegisterModel;
 import model.SeatModel;
 import view.AlertView;
 import view.DetailView;
+import view.IndexView;
 import view.SeatView;
 
 /**
@@ -50,7 +51,8 @@ public class SeatController extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent e) {
                 System.out.println(studio);                
                String temp[]= seatModel.readSeat(studio, button.getText());
-               if(temp[2]==null){
+               if(Integer.parseInt(temp[2])==0){
+                   System.out.println(temp[2]);
                    AlertView alert=new AlertView();
                    alert.setVisible(true);
                    alert.lalert.setText("Apakah anda akan memilih Bangku "+button.getText());
@@ -59,6 +61,7 @@ public class SeatController extends JFrame implements ActionListener{
                         public void actionPerformed(ActionEvent e) {                                              
                             RegisterModel regModel = new RegisterModel();                            
                             regModel.insertData(data[1], data[2], data[3], studio, button.getText());
+                            alert.setVisible(false);
                         }
                     });
                    alert.btnno.addActionListener(new ActionListener() {
@@ -83,7 +86,16 @@ public class SeatController extends JFrame implements ActionListener{
                }                              
             }
         });
-    }              
+    }       
+        seatVw.btnkembali.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {                                          
+                        seatVw.setVisible(false);
+                        IndexView indexView=new IndexView();
+                        IndexController indexController=new IndexController(indexView);
+                        indexView.setVisible(true);                        
+                    }
+                });
     }
 
     @Override

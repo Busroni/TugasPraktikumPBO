@@ -7,7 +7,6 @@ package main;
 
 import controller.IndexController;
 import controller.SeatController;
-import model.SeatInput;
 import model.SeatModel;
 import view.IndexView;
 import view.SeatView;
@@ -26,6 +25,7 @@ public class Main {
 //        SeatView setview=new SeatView();
 //        setview.setVisible(true);
 //        SeatModel setMod=new SeatModel();
+//        setMod.clearSeat();
 //        String dat[]={"Labdsj0","08","3812931"};
 //        SeatController st=new SeatController("Studio 1",dat,setview,setMod);
 //      

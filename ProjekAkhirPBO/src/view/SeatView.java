@@ -387,7 +387,7 @@ public class SeatView extends javax.swing.JFrame {
     public javax.swing.JButton C2;
     public javax.swing.JButton C3;
     public javax.swing.JButton C4;
-    private javax.swing.JButton btnkembali;
+    public javax.swing.JButton btnkembali;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

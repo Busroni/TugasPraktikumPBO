@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import model.SeatModel;
+import view.IndexView;
 import view.SeatView;
 import view.StudioView;
 
@@ -19,9 +20,7 @@ import view.StudioView;
  */
 public class StudioController extends JFrame implements ActionListener{
     StudioView studioView;
-    String data[]=new String[4];
-    String studio[]={"Studio 1","Studio 2","Studio3"};
-    
+    String data[]=new String[4];       
 
     public StudioController(StudioView studioView, String[] data) {
         this.studioView = studioView;
@@ -42,6 +41,15 @@ public class StudioController extends JFrame implements ActionListener{
                 }
             });                             
         }
+        studioView.btnkembali.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                                          
+                studioView.setVisible(false);
+                IndexView indexView=new IndexView();
+                IndexController indexController=new IndexController(indexView);
+                indexView.setVisible(true);                        
+            }
+        });
         
     }         
 

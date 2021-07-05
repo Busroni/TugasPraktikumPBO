@@ -8,6 +8,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.RegisterModel;
+import view.IndexView;
 import view.RegisterView;
 import view.StudioView;
 
@@ -32,11 +33,27 @@ class RegisterController {
                 user[2]=regView.tfusia.getText();
                 user[3]=regView.tfno.getText();    
                 System.out.println(user[3]);
-                StudioView stView=new StudioView();
-                stView.setVisible(true);
-                StudioController stCtr=new StudioController(stView,user);
+                if(user[1].equals("") || user[2].equals("") || user[3].equals("")){
+                    regView.setVisible(false);
+                        IndexView indexView=new IndexView();
+                        IndexController indexController=new IndexController(indexView);
+                        indexView.setVisible(true);
+                }else{
+                    StudioView stView=new StudioView();
+                    stView.setVisible(true);
+                    StudioController stCtr=new StudioController(stView,user);   
+                }                
             }
         });
+        regView.btnkembali.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {                                          
+                        regView.setVisible(false);
+                        IndexView indexView=new IndexView();
+                        IndexController indexController=new IndexController(indexView);
+                        indexView.setVisible(true);                        
+                    }
+                });  
     }
     
 }
