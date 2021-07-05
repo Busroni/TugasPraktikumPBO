@@ -7,6 +7,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -14,11 +16,12 @@ import javax.swing.JTable;
 import model.CustomerModel;
 import model.SeatModel;
 import view.AlertView;
-import view.CustomerView;
 import view.DashboardView;
 import view.IndexView;
-import view.SeatView;
+import view.MovieView;
+
 import view.StudioView;
+import view.UserView;
 
 /**
  *
@@ -33,17 +36,44 @@ public class DashboardController extends JFrame implements ActionListener{
                         @Override
                         public void actionPerformed(ActionEvent e) {                                             
                             dashVw.setVisible(false);
-                            CustomerView csVw=new CustomerView();
+                            UserView csVw=new UserView();
                             csVw.setVisible(true);  
                             CustomerModel cstMod=new CustomerModel();
                             if (cstMod.getBanyakData()!=0) {
                                 String dataKontak[][] = cstMod.readUser();
-//                                csVw.tabel.setModel((new JTable(dataKontak, csVw.tabel.setModel(dataModel))).getModel()); //Masih Error
+                                csVw.tabel.setModel((new JTable(dataKontak, csVw.namaKolom)).getModel()); //Masih Error
+                                
+                                csVw.tabel.addMouseListener(new MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(MouseEvent e) {
+                                        super.mousePressed(e);
+                                        int baris = csVw.tabel.getSelectedRow();                                        
+                                        String dataterpilih = csVw.tabel.getValueAt(baris, 0).toString();
+                                        System.out.println(dataterpilih);
+                                        int temp=Integer.parseInt(dataterpilih);
+                                        System.out.print(temp);
+                                        if(cstMod.checkUser(temp)){
+                                            int input = JOptionPane.showConfirmDialog(null,
+                                            "Apa anda ingin menghapus User dengan id" + dataterpilih + "?", "Pilih Opsi...", JOptionPane.YES_NO_OPTION);
+
+                                            if (input == 0) {
+                                                cstMod.deleteUser(dataterpilih);
+                                                String dataKontak[][] = cstMod.readUser();
+                                                csVw.tabel.setModel((new JTable(dataKontak, csVw.namaKolom)).getModel()); //Masih Error
+                                            } else {
+                                                JOptionPane.showMessageDialog(null, "Tidak Jadi Dihapus");
+                                            }
+                                        }                                        
+                                    }
+                                });
+                                
+                                
+                                
                             }
                             else {
                                 JOptionPane.showMessageDialog(null, "Data Tidak Ada");
                             }
-                            csVw.btnkembali.addActionListener(new ActionListener() {
+                            csVw.getBtnKembali().addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {                                          
                                     csVw.setVisible(false);                                                                        
@@ -90,13 +120,29 @@ public class DashboardController extends JFrame implements ActionListener{
                                 @Override
                                 public void actionPerformed(ActionEvent e) {                                          
                                     studio.setVisible(false);
-                                    IndexView indexView=new IndexView();
-                                    IndexController indexController=new IndexController(indexView);
-                                    indexView.setVisible(true);                        
+                                    dashVw.setVisible(true);                        
                                 }
                             });    
                         }
-                    });
+                    });        
+        dashVw.btnmovie.addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {                                                                              
+                                    dashVw.setVisible(false);
+                                    MovieView mvVw=new MovieView();
+                                    mvVw.setVisible(true);
+                                    MovieController mvCtr=new MovieController(mvVw);
+                                }
+                            });
+        dashVw.btnkembali.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {                                          
+                        dashVw.setVisible(false);
+                        IndexView indexView=new IndexView();
+                        IndexController indexController=new IndexController(indexView);
+                        indexView.setVisible(true);                        
+                    }
+                }); 
     }
 
     @Override

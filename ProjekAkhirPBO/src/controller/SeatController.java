@@ -9,12 +9,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import model.MovieModel;
 import model.RegisterModel;
 import model.SeatModel;
 import view.AlertView;
 import view.DetailView;
 import view.IndexView;
 import view.SeatView;
+import view.StudioView;
 
 /**
  *
@@ -30,6 +32,15 @@ public class SeatController extends JFrame implements ActionListener{
         this.data = data;                      
         this.seatVw = seatVw;
         this.seatModel = seatModel;
+        
+        MovieModel mvMd=new MovieModel();
+        seatVw.lstudio.setText(studio);
+        String movieData[]=new String[2];
+        movieData=mvMd.setMovie(studio);
+//        System.out.println(movieData[0]);        
+        seatVw.lfilm.setText(movieData[0]);
+        seatVw.lgenre.setText(movieData[1]);
+        
         JButton[] seatVar={
             seatVw.A1,
             seatVw.A2,
@@ -91,9 +102,9 @@ public class SeatController extends JFrame implements ActionListener{
                     @Override
                     public void actionPerformed(ActionEvent e) {                                          
                         seatVw.setVisible(false);
-                        IndexView indexView=new IndexView();
-                        IndexController indexController=new IndexController(indexView);
-                        indexView.setVisible(true);                        
+                        StudioView studioView=new StudioView();
+                        StudioController studioController=new StudioController(studioView,data);
+                        studioView.setVisible(true);                        
                     }
                 });
     }

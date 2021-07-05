@@ -23,7 +23,7 @@ public class SeatModel {
             String query = "Select * from seat WHERE studio='"+Studio+"' and seat_code='"+Seat+"'";             
             ResultSet resultSet = DB.statement.executeQuery(query);
             while (resultSet.next()){
-                data[0] = resultSet.getString("id_seat"); //harus sesuai nama kolom di mysql
+                data[0] = resultSet.getString("seat_code"); //harus sesuai nama kolom di mysql
                 data[1] = resultSet.getString("studio");                
                 data[2] = resultSet.getString("id_customer");                                
             }

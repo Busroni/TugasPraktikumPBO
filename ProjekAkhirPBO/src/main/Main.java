@@ -7,6 +7,8 @@ package main;
 
 import controller.IndexController;
 import controller.SeatController;
+import model.CustomerModel;
+import model.MovieModel;
 import model.SeatModel;
 import view.IndexView;
 import view.SeatView;
@@ -21,7 +23,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {  
-        
+//        CustomerModel cst=new CustomerModel();
+//        cst.checkUser(3214);
+//            MovieModel mvMd=new MovieModel();
+//            mvMd.setMovie("Studio 1");
 //        SeatView setview=new SeatView();
 //        setview.setVisible(true);
 //        SeatModel setMod=new SeatModel();

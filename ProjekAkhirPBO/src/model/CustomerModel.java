@@ -7,6 +7,7 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class CustomerModel {
     DatabaseModel DB=new DatabaseModel();    
@@ -49,6 +50,41 @@ public class CustomerModel {
             System.out.println("SQL Error");
             return 0;
         }
+    }
+    public void deleteUser (String id) {
+        try{
+            String query = "DELETE FROM user WHERE id = '"+id+"'";
+            DB.statement = DB.koneksi.createStatement();
+            DB.statement.executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Berhasil Dihapus");
+            
+        }catch(SQLException sql) {
+            System.out.println(sql.getMessage());
+        }
+    }
+    public boolean checkUser (int id) {
+        try{
+            String x = null;              
+            String query2 = "Select * from seat WHERE id_customer='"+id+"'";             
+            DB.statement = DB.koneksi.createStatement();
+            ResultSet resultSet2 = DB.statement.executeQuery(query2);
+            while (resultSet2.next()){
+                x = resultSet2.getString("id_customer"); 
+            }            
+            System.out.println(x);
+            System.out.print(id);
+            if(x!=null){
+                JOptionPane.showMessageDialog(null, "User telah memesan tidak dapat dihapus");
+                return false;
+            }else{
+                return true;
+            }                        
+            
+        }catch(SQLException sql) {
+            System.out.println(sql.getMessage());
+            return false;
+        }
+        
     }
 }
 

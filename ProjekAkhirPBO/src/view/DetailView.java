@@ -32,6 +32,7 @@ public class DetailView extends javax.swing.JFrame {
         lstudio = new javax.swing.JLabel();
         lusername = new javax.swing.JLabel();
         lseat1 = new javax.swing.JLabel();
+        lseat2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(480, 480));
@@ -55,6 +56,9 @@ public class DetailView extends javax.swing.JFrame {
         lseat1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
         lseat1.setText("Seat");
 
+        lseat2.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        lseat2.setText("Seat");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,20 +66,23 @@ public class DetailView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(lstudio)
-                        .addGap(161, 161, 161)
-                        .addComponent(lseat1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(329, 329, 329)
+                        .addGap(197, 197, 197)
                         .addComponent(lusername))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(349, 349, 349)
-                        .addComponent(btnkembali)))
-                .addContainerGap(210, Short.MAX_VALUE))
+                        .addGap(221, 221, 221)
+                        .addComponent(btnkembali))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel1)))
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(lstudio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lseat2)
+                .addGap(28, 28, 28)
+                .addComponent(lseat1)
+                .addGap(107, 107, 107))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,14 +90,15 @@ public class DetailView extends javax.swing.JFrame {
                 .addContainerGap(135, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lstudio, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lseat1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lseat1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lseat2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lusername, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnkembali)
-                .addGap(24, 24, 24))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -142,6 +150,7 @@ public class DetailView extends javax.swing.JFrame {
     public javax.swing.JButton btnkembali;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel lseat1;
+    public javax.swing.JLabel lseat2;
     public javax.swing.JLabel lstudio;
     public javax.swing.JLabel lusername;
     // End of variables declaration//GEN-END:variables
