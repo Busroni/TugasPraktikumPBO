@@ -17,7 +17,7 @@ public class RegisterModel {
         try {
                 DB.statement = (Statement) DB.koneksi.createStatement();                
                 int id=checkId();
-                String query = "INSERT INTO `user` (`id`, `nama`, `usia`, `notelp`) VALUES ('"+id+"', '"+Nama+"', '"+Usia+"', '"+NoTelp+"');";                           
+                String query = "INSERT INTO `user` (`id`, `nama`, `usia`, `notelp`, `studio`,`seat_code`) VALUES ('"+id+"', '"+Nama+"', '"+Usia+"', '"+NoTelp+"','"+Studio+"','"+Seat+"');";                           
                 DB.statement.executeUpdate(query); //execute querynya               
                 
                 String query2 = "UPDATE `seat` SET `id_customer`='"+id+"' WHERE studio='"+Studio+"' and seat_code='"+Seat+"'";                           

@@ -15,7 +15,7 @@ public class CustomerModel {
         try{
             int jmlData = 0;
             
-            String data[][] = new String[getBanyakData()][4]; //baris, kolom nya ada 4
+            String data[][] = new String[getBanyakData()][6]; //baris, kolom nya ada 4
             
             String query = "Select * from user"; 
             ResultSet resultSet = DB.statement.executeQuery(query);
@@ -24,6 +24,8 @@ public class CustomerModel {
                 data[jmlData][1] = resultSet.getString("nama");                
                 data[jmlData][2] = resultSet.getString("usia");
                 data[jmlData][3] = resultSet.getString("notelp");
+                data[jmlData][4] = resultSet.getString("studio");
+                data[jmlData][5] = resultSet.getString("seat_code");
                 jmlData++;
             }
             return data;

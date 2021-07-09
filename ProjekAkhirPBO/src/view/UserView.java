@@ -24,7 +24,7 @@ public class UserView extends JFrame{
     public JTable tabel;
     DefaultTableModel dtm;
     JScrollPane scrollPane;
-    public Object namaKolom[] = {"Id", "Nama", "Usia", "No Telepon"};
+    public Object namaKolom[] = {"Id", "Nama", "Usia", "No Telepon","Studio","Seat"};
 
     public UserView() {
         dtm = new DefaultTableModel(namaKolom, 0);

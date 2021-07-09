@@ -21,6 +21,17 @@ public class MovieController {
     public MovieController(MovieView mvVw) {
         this.mvVw = mvVw;
         MovieModel mvMd=new MovieModel();
+        String[] data1=mvMd.setMovie("Studio 1");
+        System.out.println(data1[0]);
+            mvVw.film1.setText(data1[0]);        
+            mvVw.genre1.setText(data1[1]);
+        String[] data2=mvMd.setMovie("Studio 2");
+            mvVw.film2.setText(data2[0]);        
+            mvVw.genre2.setText(data2[1]);    
+        String[] data3=mvMd.setMovie("Studio 3");
+            mvVw.film3.setText(data3[0]);        
+            mvVw.genre3.setText(data3[1]);            
+            
         mvVw.btnkembali.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {                                          
@@ -53,7 +64,18 @@ public class MovieController {
                 String genre=mvVw.genre3.getText();
                 mvMd.updateMovie("Studio 3",film, genre);
             }
-        });                               
+        });    
+        mvVw.btnreset.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {                                          
+                mvVw.film1.setText("");
+                mvVw.film2.setText("");
+                mvVw.film3.setText("");
+                mvVw.genre1.setText("");
+                mvVw.genre2.setText("");
+                mvVw.genre3.setText("");
+            }
+        }); 
     }
     
     
