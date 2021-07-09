@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import model.CustomerModel;
+import model.InstalasiDatabase;
 import model.SeatModel;
 import view.AlertView;
 import view.DashboardView;
@@ -102,6 +103,7 @@ public class DashboardController extends JFrame implements ActionListener{
                                             @Override
                                             public void actionPerformed(ActionEvent e) {                                             
                                                 seatMd.clearSeat(button.getText());
+                                                alert.setVisible(false);
                                             }
                                         });
                                         alert.btnno.addActionListener(new ActionListener() {
@@ -143,6 +145,48 @@ public class DashboardController extends JFrame implements ActionListener{
                         indexView.setVisible(true);                        
                     }
                 }); 
+        InstalasiDatabase install=new InstalasiDatabase();        
+        if(install.checkMovie() && install.checkSeat()){
+            dashVw.btninstall.setEnabled(true);
+        }else{
+            dashVw.btninstall.setEnabled(false);
+        }
+        dashVw.btninstall.addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {                                                                              
+                                    
+                                    String[] seatVar={
+                                        "A1",
+                                        "A2",
+                                        "A3",
+                                        "A4",
+                                        "B1",
+                                        "B2",
+                                        "B3",
+                                        "B4",
+                                        "C1",
+                                        "C2",
+                                        "C3",
+                                        "C4"           
+                                    };
+                                    String[] studioVar={
+                                        "Studio 1",
+                                        "Studio 2",
+                                        "Studio 3"
+                                    };
+                                    for(String studio:studioVar){
+                                        install.insertMovie(studio);
+                                        for(String seat:seatVar){
+                                            install.insertSeat(studio, seat);                                            
+                                        }
+                                    }
+                                    JOptionPane.showMessageDialog(null, "Instalasi Berhasil");
+                                    dashVw.setVisible(false);
+                                    IndexView indexView=new IndexView();
+                                    IndexController indexController=new IndexController(indexView);
+                                    indexView.setVisible(true);                                       
+                                }
+                            });             
     }
 
     @Override

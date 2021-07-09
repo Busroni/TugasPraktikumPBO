@@ -34,6 +34,7 @@ public class DashboardView extends javax.swing.JFrame {
         btnmovie = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
         btnkembali = new javax.swing.JButton();
+        btninstall = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(480, 480));
@@ -66,6 +67,8 @@ public class DashboardView extends javax.swing.JFrame {
             }
         });
 
+        btninstall.setText("Instalasi Database");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,6 +85,10 @@ public class DashboardView extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(btnkembali, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(277, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btninstall, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +99,9 @@ public class DashboardView extends javax.swing.JFrame {
                 .addComponent(btnriwayat, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addComponent(btninstall)
+                .addGap(37, 37, 37)
                 .addComponent(btnkembali)
                 .addGap(16, 16, 16))
         );
@@ -159,6 +168,7 @@ public class DashboardView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public transient javax.swing.JButton btnclear;
+    public javax.swing.JButton btninstall;
     public transient javax.swing.JButton btnkembali;
     public transient javax.swing.JButton btnmovie;
     public transient javax.swing.JButton btnriwayat;

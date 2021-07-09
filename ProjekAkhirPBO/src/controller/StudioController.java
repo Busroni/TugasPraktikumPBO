@@ -35,6 +35,7 @@ public class StudioController extends JFrame implements ActionListener{
                     
                     SeatView seatVw=new SeatView();
                     seatVw.setVisible(true);
+                    studioView.setVisible(false);
                     SeatModel seatModel=new SeatModel(); 
                     SeatController seatCtr=new SeatController(button.getText(),data,seatVw,seatModel);                               
                   

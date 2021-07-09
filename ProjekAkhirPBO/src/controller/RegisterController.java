@@ -41,6 +41,7 @@ class RegisterController {
                 }else{
                     StudioView stView=new StudioView();
                     stView.setVisible(true);
+                    regView.setVisible(false);
                     StudioController stCtr=new StudioController(stView,user);   
                 }                
             }

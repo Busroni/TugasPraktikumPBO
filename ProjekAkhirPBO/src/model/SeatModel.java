@@ -42,21 +42,7 @@ public class SeatModel {
             System.out.println("SQL Error");
             return null;
         }
-    }
-    
-    public void insertSeat(String Studio, String Seat){
-        int jmlData=0;
-        try {
-            String query = "INSERT INTO `seat` (`id_seat`, `studio`, `seat_code`, `id_customer`) VALUES (NULL, '"+Studio+"', '"+Seat+"', '"+0+"');";
-           
-                DB.statement = (Statement) DB.koneksi.createStatement();
-                DB.statement.executeUpdate(query); //execute querynya                
-            
-        } catch (Exception sql) {
-            System.out.println(sql.getMessage());   
-            JOptionPane.showMessageDialog(null, sql.getMessage());
-        }
-    }
+    }        
     
     public void clearSeat(String studio){        
         try {

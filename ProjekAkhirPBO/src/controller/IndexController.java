@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.DatabaseModel;
+import model.InstalasiDatabase;
 import model.RegisterModel;
 import view.DashboardView;
 import view.IndexView;
@@ -25,7 +26,14 @@ public class IndexController {
 
     public IndexController(IndexView indexView) {
         this.indexView = indexView;
-        indexView.setVisible(true);        
+        indexView.setVisible(true);  
+        InstalasiDatabase install=new InstalasiDatabase();        
+        if(install.checkMovie() && install.checkSeat()){
+            indexView.btnpesan.setEnabled(false);
+            indexView.lalert.setText("Lakukan Instalasi Database terlebih dahulu !");
+        }else{
+            indexView.btnpesan.setEnabled(true);
+        }
         indexView.btnpesan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {                  

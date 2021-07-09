@@ -14,7 +14,6 @@ import model.RegisterModel;
 import model.SeatModel;
 import view.AlertView;
 import view.DetailView;
-import view.IndexView;
 import view.SeatView;
 import view.StudioView;
 
