@@ -64,6 +64,7 @@ public class SeatController extends JFrame implements ActionListener{
                if(Integer.parseInt(temp[2])==0){
                    System.out.println(temp[2]);
                    AlertView alert=new AlertView();
+                   alert.setLocationRelativeTo(null);
                    alert.setVisible(true);
                    alert.lalert.setText("Apakah anda akan memilih Bangku "+button.getText());
                    alert.btnyes.addActionListener(new ActionListener() {
@@ -83,6 +84,7 @@ public class SeatController extends JFrame implements ActionListener{
                    
                }else{
                    DetailView detView=new DetailView();
+                   detView.setLocationRelativeTo(null);
                    detView.setVisible(true);
                    detView.lusername.setText(temp[3]);
                    detView.lstudio.setText(temp[1]);
@@ -103,6 +105,7 @@ public class SeatController extends JFrame implements ActionListener{
                         seatVw.setVisible(false);
                         StudioView studioView=new StudioView();
                         StudioController studioController=new StudioController(studioView,data);
+                        studioView.setLocationRelativeTo(null);
                         studioView.setVisible(true);                        
                     }
                 });

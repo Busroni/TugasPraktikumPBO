@@ -23,7 +23,7 @@ class RegisterController {
     public RegisterController(RegisterView regView, RegisterModel regModel) {
         this.regView = regView;
         this.regModel = regModel;
-        
+        regView.setLocationRelativeTo(null);
         regView.setVisible(true);
         regView.btnpilih.addActionListener(new ActionListener() {
             @Override
@@ -37,9 +37,11 @@ class RegisterController {
                     regView.setVisible(false);
                         IndexView indexView=new IndexView();
                         IndexController indexController=new IndexController(indexView);
+                        indexView.setLocationRelativeTo(null);
                         indexView.setVisible(true);
                 }else{
                     StudioView stView=new StudioView();
+                    stView.setLocationRelativeTo(null);
                     stView.setVisible(true);
                     regView.setVisible(false);
                     StudioController stCtr=new StudioController(stView,user);   
@@ -52,6 +54,7 @@ class RegisterController {
                         regView.setVisible(false);
                         IndexView indexView=new IndexView();
                         IndexController indexController=new IndexController(indexView);
+                        indexView.setLocationRelativeTo(null);
                         indexView.setVisible(true);                        
                     }
                 });  

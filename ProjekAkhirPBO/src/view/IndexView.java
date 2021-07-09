@@ -33,13 +33,18 @@ public class IndexView extends javax.swing.JFrame {
         btnpesan = new javax.swing.JButton();
         btnadmin = new javax.swing.JButton();
         lalert = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setSize(new java.awt.Dimension(480, 480));
 
-        jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel1.setText("Proses Pemesanan Tiket");
+        jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Pemesanan Tiket");
 
+        btnpesan.setBackground(new java.awt.Color(144, 184, 248));
+        btnpesan.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnpesan.setText("Pesan");
 
         btnadmin.setText("Admin");
@@ -57,16 +62,18 @@ public class IndexView extends javax.swing.JFrame {
                 .addContainerGap(396, Short.MAX_VALUE)
                 .addComponent(btnadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(129, 129, 129)
-                            .addComponent(lalert, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(173, 173, 173)
-                            .addComponent(btnpesan, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(btnpesan, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(lalert, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -74,7 +81,9 @@ public class IndexView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(lalert)
                 .addGap(18, 18, 18)
                 .addComponent(btnpesan, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,6 +143,7 @@ public class IndexView extends javax.swing.JFrame {
     public javax.swing.JButton btnadmin;
     public javax.swing.JButton btnpesan;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel lalert;
     // End of variables declaration//GEN-END:variables
     

@@ -32,13 +32,24 @@ public class AlertView extends javax.swing.JFrame {
         btnno = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lalert.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        btnyes.setBackground(new java.awt.Color(58, 150, 121));
+        btnyes.setForeground(new java.awt.Color(0, 0, 0));
         btnyes.setText("Yes");
+        btnyes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnyesActionPerformed(evt);
+            }
+        });
 
+        btnno.setBackground(new java.awt.Color(240, 84, 84));
+        btnno.setForeground(new java.awt.Color(0, 0, 0));
         btnno.setSelected(true);
         btnno.setText("No");
+        btnno.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,6 +79,10 @@ public class AlertView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnyesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnyesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnyesActionPerformed
 
     /**
      * @param args the command line arguments

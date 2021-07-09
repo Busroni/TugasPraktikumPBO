@@ -37,6 +37,7 @@ public class MovieController {
             public void actionPerformed(ActionEvent e) {                                          
                 mvVw.setVisible(false);    
                 DashboardView dashVw = new DashboardView();
+                dashVw.setLocationRelativeTo(null);
                 dashVw.setVisible(true);                   
                 DashboardController dashCtr = new DashboardController(dashVw);                     
             }

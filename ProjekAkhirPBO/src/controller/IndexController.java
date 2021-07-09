@@ -26,6 +26,7 @@ public class IndexController {
 
     public IndexController(IndexView indexView) {
         this.indexView = indexView;
+        indexView.setLocationRelativeTo(null);
         indexView.setVisible(true);  
         InstalasiDatabase install=new InstalasiDatabase();        
         if(install.checkMovie() && install.checkSeat()){
@@ -47,12 +48,14 @@ public class IndexController {
             @Override
             public void actionPerformed(ActionEvent e) {                  
                 PasswordView pass=new PasswordView();
+                pass.setLocationRelativeTo(null);
                 pass.setVisible(true);
                 indexView.setVisible(false);
                 pass.btnkembali.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {                                          
                         pass.setVisible(false);
+                        indexView.setLocationRelativeTo(null);
                         indexView.setVisible(true);
                         
                     }
@@ -66,6 +69,7 @@ public class IndexController {
                         System.out.println(sandiVal);
                         if(sandiVal.equals(temp)){
                             DashboardView dash=new DashboardView();
+                            dash.setLocationRelativeTo(null);
                             dash.setVisible(true);
                             pass.setVisible(false);
                             DashboardController dashCtr=new DashboardController(dash);
